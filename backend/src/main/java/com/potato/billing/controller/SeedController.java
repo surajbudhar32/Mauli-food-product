@@ -1,0 +1,3 @@
+package com.potato.billing.controller;
+import com.potato.billing.entity.RawMaterial; import com.potato.billing.repository.RawMaterialRepository; import org.springframework.boot.CommandLineRunner; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration;
+@Configuration public class SeedController { @Bean CommandLineRunner seed(RawMaterialRepository repo){return args->{if(repo.count()==0){for(String[] x:new String[][]{{"Potato","kg"},{"Oil","L"},{"Salt","kg"},{"Masala","kg"},{"Packaging","pcs"}}){RawMaterial r=new RawMaterial();r.setName(x[0]);r.setUnit(x[1]);repo.save(r);}}};}}

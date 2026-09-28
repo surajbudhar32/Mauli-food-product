@@ -1,0 +1,1 @@
+package com.potato.billing.repository; import com.potato.billing.entity.SalaryRecord; import org.springframework.data.jpa.repository.JpaRepository; public interface SalaryRecordRepository extends JpaRepository<SalaryRecord,Long>{}

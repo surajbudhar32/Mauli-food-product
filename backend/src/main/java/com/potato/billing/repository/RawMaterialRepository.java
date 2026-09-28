@@ -1,0 +1,1 @@
+package com.potato.billing.repository; import com.potato.billing.entity.RawMaterial; import org.springframework.data.jpa.repository.JpaRepository; public interface RawMaterialRepository extends JpaRepository<RawMaterial,Long>{}

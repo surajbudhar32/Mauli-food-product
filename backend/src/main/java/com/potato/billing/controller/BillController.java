@@ -1,0 +1,3 @@
+package com.potato.billing.controller;
+import com.potato.billing.dto.BillRequest; import com.potato.billing.entity.Bill; import com.potato.billing.service.BillService; import org.springframework.web.bind.annotation.*; import java.util.*;
+@RestController @RequestMapping("/api/bills") public class BillController { private final BillService service; public BillController(BillService s){service=s;} @PostMapping public Bill create(@RequestBody BillRequest r){return service.create(r);} @GetMapping public List<Bill> all(){return service.all();} @GetMapping("/{id}") public Bill one(@PathVariable Long id){return service.one(id);} @GetMapping("/customer-summary") public BillService.CustomerSummary summary(@RequestParam String mobile){return service.summary(mobile);} }
